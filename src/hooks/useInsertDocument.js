@@ -1,5 +1,5 @@
 // hooks
-import { useState, useEffect, useReducer } from "react";
+import { useState, useReducer } from "react";
 
 // firebase
 import { db } from "../firebase/config";
@@ -30,7 +30,10 @@ export const useInsertDocument = (docCollection) => {
   const [cancelled, setCancelled] = useState(false);
 
   const checkCancelledBeforeDispatch = (action) => {
-    if (!cancelled) dispatch(action);
+    if (!cancelled) {
+      dispatch(action);
+      return () => setCancelled(true);
+    }
   };
 
   const insertDocument = async (document) => {
@@ -57,10 +60,6 @@ export const useInsertDocument = (docCollection) => {
       });
     }
   };
-
-  useEffect(() => {
-    return () => setCancelled(true);
-  }, []);
 
   return { insertDocument, response };
 };
