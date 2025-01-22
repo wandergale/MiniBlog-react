@@ -11,11 +11,13 @@ const Dashboard = () => {
   const { user } = useAuthContext();
   const uid = user.uid;
 
-  const posts = [];
+  const { documents: posts, loading } = useFetchDocuments("posts", null, uid);
+
   return (
     <div>
       <h2>Dashboard</h2>
       <p>Manage your posts</p>
+      {loading && <p>Loading...</p>}
       {posts && posts.length === 0 ? (
         <div className={styles.noposts}>
           <p>Any posts found...</p>
@@ -26,6 +28,7 @@ const Dashboard = () => {
       ) : (
         <div>
           <p>Tem posts</p>
+          {posts && posts.map((post) => <h3>{post.title}</h3>)}
         </div>
       )}
     </div>
