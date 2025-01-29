@@ -22,6 +22,7 @@ a:hover {
   background-color: #fff;
   height: 8vh;
   padding: 0.5em 2em;
+  border-bottom: 3px solid #edf3f6;
 }
 
 .brand {
