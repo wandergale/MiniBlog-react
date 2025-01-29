@@ -1,18 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
 .navbar {
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
   justify-content: space-between;
   align-items: center;
+  font-size: 15pt;
+  background-color: #fff;
+  height: 8vh;
   padding: 0.5em 2em;
 }
 
 .brand {
   font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .brand span {
   font-weight: 900;
-  text-transform: uppercase;
 }
 
 .links_list {
@@ -31,4 +50,73 @@
 .active {
   background-color: #000;
   color: #fff;
+}
+
+.mobileMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobileMenu div {
+  width: 32px;
+  height: 2px;
+  background: #000;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .links_list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #ffffff49;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .links_list.active {
+    transform: translateX(0);
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobileMenu.active {
+  background: #fff;
+}
+
+.mobileMenu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobileMenu.active .line2 {
+  opacity: 0;
+}
+
+.mobileMenu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
 }
