@@ -18,3 +18,19 @@
 .tags span {
   font-weight: bold;
 }
+
+@media (max-width: 750px) {
+  .post_container h1 {
+    margin: 10px 0 20px 0px;
+  }
+
+  .post_container img {
+    width: 325px;
+    margin: 0 10px 0 10px;
+    border-radius: 5%;
+  }
+
+  .post_container p {
+    margin: 10px 0 10px 0;
+  }
+}
