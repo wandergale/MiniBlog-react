@@ -29,3 +29,9 @@
 .noposts a {
   padding: 10px 25px;
 }
+
+@media (max-width: 750px) {
+  .home h1 {
+    margin: 0.8em 0 0.8em 0;
+  }
+}
