@@ -74,9 +74,9 @@ a:hover {
     position: absolute;
     top: 8vh;
     right: 0;
-    width: 50vw;
+    width: 100%;
     height: 92vh;
-    background: #ffffff49;
+    background: #ffffff;
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
