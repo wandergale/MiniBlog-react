@@ -40,7 +40,7 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
-      <h1>Register to post</h1>
+      <h2>Register to post</h2>
       <p>Create your account and share your stories.</p>
       <form onSubmit={handleSubmit}>
         <label>

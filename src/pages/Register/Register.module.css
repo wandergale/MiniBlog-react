@@ -5,3 +5,14 @@
 .register a {
   color: #aaa;
 }
+
+@media (max-width: 750px) {
+  .register h2 {
+    font-size: 2em;
+    margin: 1em 0 1em 0;
+  }
+
+  .register p {
+    margin: 0 1em 2em 1em;
+  }
+}
