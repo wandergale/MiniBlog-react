@@ -32,7 +32,7 @@ const Login = () => {
   }, [authError]);
   return (
     <div className={styles.about}>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <p>Sign in to start using the system.</p>
       <form onSubmit={handleSubmit}>
         <label>

@@ -5,3 +5,15 @@
 .about p {
   color: #aaa;
 }
+
+@media (max-width: 750px) {
+  .about h2 {
+    font-size: 2em;
+    margin: 20px 0 40px 0;
+  }
+
+  .about p {
+    margin-bottom: 2em;
+    font-size: 1em;
+  }
+}
